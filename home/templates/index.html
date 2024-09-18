@@ -1,0 +1,82 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UIC</title>
+
+    <!-- Carga de archivos estáticos en Django -->
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}" />
+    <script src="https://kit.fontawesome.com/64df86afd9.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <!-- Cabezera -->
+    <div class="header">
+      <h2><i class="fa-solid fa-brain"></i> UIC Asistente de conocimientos</h2>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+      <aside class="column-20" id="left-column">
+        <!-- Boton -->
+        <div class="left-header">
+          <!-- Ícono SVG -->
+          <svg id="icon-left" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-caret-left-square-fill" viewBox="0 0 16 16" onclick="toggleResize()">
+            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm10.5 10V4a.5.5 0 0 0-.832-.374l-4.5 4a.5.5 0 0 0 0 .748l4.5 4A.5.5 0 0 0 10.5 12" />
+          </svg>
+          <!-- Ícono SVG -->
+          <svg id="icon-right" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16" onclick="toggleResize()" style="display:none;">
+            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z" />
+          </svg>
+        </div>
+        <!-- CHATS -->
+        <div class="left-body">XD</div>
+        <div class="left-footer">
+          <div class="support-button">
+            <i class="fa-solid fa-headset"></i>
+            <!-- Texto al lado derecho -->
+            <span class="support-text">Soporte Técnico</span>
+          </div>
+        </div>
+      </aside>
+      <section class="column-80" id="right-column">
+        <div class="right-body" id="messages">
+          <!-- Contenido del body -->
+        </div>
+        <div class="right-footer">
+          <!-- Barra de búsqueda -->
+          <div class="search-container">
+            <input type="text" id="search" placeholder="Escribe tu consulta aquí..." onkeydown="checkEnter(event)" />
+            <button id="search-btn" onclick="submitMessage()"><i class="fas fa-search"></i></button>
+            <div id="loading" class="loading-spinner" style="display: none;"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- script's -->
+    <script src="{% static 'SCRIPT/scripts.js' %}"></script>
+    <script>
+      // Función para cargar las etiquetas desde un archivo JSON
+      fetch("{% static 'tags.json' %}") // Ruta al archivo tags.json en el directorio static
+        .then((response) => response.json())
+        .then((data) => {
+          const tagsContainer = document.querySelector('.tags')
+          data.tags.forEach((tag) => {
+            const spanElement = document.createElement('span')
+            spanElement.textContent = tag
+            spanElement.classList.add('tag')
+            tagsContainer.appendChild(spanElement)
+          })
+        })
+        .catch((error) => console.error('Error cargando las etiquetas:', error))
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
