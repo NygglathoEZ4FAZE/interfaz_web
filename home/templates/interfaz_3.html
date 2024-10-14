@@ -1,0 +1,50 @@
+<!-- Cargar archivos static -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Cargar estilos y scripts -->
+    <link rel="stylesheet" href="{% static 'css/style_2.css' %}" />
+    <script src="{% static 'script/scripts.js' %}"></script>
+    <script src="https://kit.fontawesome.com/64df86afd9.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- Cabecera -->
+    <header class="header">
+      <div class="header-content">
+        <div class="header-left">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczNM4xetf7zGAUv44g2eCoFYiQVempGqBKW0Eol7D6c85DcIzDlwxpySn1CQrImZAtemOdzivE6bzyo6o5K2EaAeKVPwv4OYQJ4RRPeanXFS4Gi6_VB0YbjjQNl4QJgy6HsN4Ei6T_aIriXaF5tJ44oSoA=w720-h382-s-no-gm?authuser=0" alt="Spotify Logo" />
+        </div>
+        <div class="header-right">
+          <a href="#">Explorar Premium</a>
+          <a href="#">Instalar aplicación</a>
+          <a href="#">Account ▼</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenedor de ayuda -->
+    <div class="content">
+      <h2>Asistente de conocimientos</h2>
+      <div class="profile-info">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNM4xetf7zGAUv44g2eCoFYiQVempGqBKW0Eol7D6c85DcIzDlwxpySn1CQrImZAtemOdzivE6bzyo6o5K2EaAeKVPwv4OYQJ4RRPeanXFS4Gi6_VB0YbjjQNl4QJgy6HsN4Ei6T_aIriXaF5tJ44oSoA=w720-h382-s-no-gm?authuser=0" alt="Spotify Logo" />
+        <span>Hola, Nygglatho</span>
+      </div>
+      <h1>¿Cómo te podemos ayudar?</h1>
+      <!-- Mensajes -->
+      <div class="messages-body" id="messages">
+        <!-- Contenido del body -->
+      </div>
+      <!-- Barra de búsqueda -->
+      <div class="search-container">
+        <input type="text" id="search" placeholder="Escribe tu consulta aquí..." onkeydown="checkEnter(event)" />
+        <button id="search-btn" onclick="submitMessage()"><i class="fas fa-search"></i></button>
+        <div id="loading" class="loading-spinner" style="display: none;"></div>
+      </div>
+    </div>
+  </body>
+</html>

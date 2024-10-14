@@ -1,0 +1,41 @@
+<!-- Cargar archivos static -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interfaz_2</title>
+
+    <!-- Cargar estilos y scripts -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <script src="{% static 'script/scripts.js' %}"></script>
+  </head>
+  <body>
+    <!-- Cabecera -->
+    <header class="header">
+      <div class="header-content">
+        <div class="header-left">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczNM4xetf7zGAUv44g2eCoFYiQVempGqBKW0Eol7D6c85DcIzDlwxpySn1CQrImZAtemOdzivE6bzyo6o5K2EaAeKVPwv4OYQJ4RRPeanXFS4Gi6_VB0YbjjQNl4QJgy6HsN4Ei6T_aIriXaF5tJ44oSoA=w720-h382-s-no-gm?authuser=0" alt="Spotify Logo" />
+        </div>
+        <div class="header-right">
+          <a href="#">Premium</a>
+          <a href="{% url 'interfaz_3' %}">Ayuda</a>
+          <a href="{% url 'interfaz_4' %}">Base de conocimientos</a>
+          <a href="#">Descargar</a>
+          <div class="profile">
+            <img id="profile-img" src="https://lh3.googleusercontent.com/pw/AP1GczNM4xetf7zGAUv44g2eCoFYiQVempGqBKW0Eol7D6c85DcIzDlwxpySn1CQrImZAtemOdzivE6bzyo6o5K2EaAeKVPwv4OYQJ4RRPeanXFS4Gi6_VB0YbjjQNl4QJgy6HsN4Ei6T_aIriXaF5tJ44oSoA=w720-h382-s-no-gm?authuser=0" alt="Profile Picture" />
+            <!--  Contenido del dropdown
+            <div id="profile-options" class="dropdown-content">
+              <a href="#">Cerrar sesión</a>
+            </div>  -->
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      <img src="{% static 'img/overview.jpeg' %}" class="responsive-image">
+    </div>
+  </body>
+</html>

@@ -1,0 +1,237 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111113;
+    height: 100vh;
+}
+
+.header {
+    background: linear-gradient(to bottom, #1e90ff, #111113);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 60px;
+}
+
+.header-left img {
+    height: 60px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-right a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 50px;
+    background-color: #333;
+}
+
+.header-right a:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+/* después del header */
+.content {
+    margin-top: 90px;
+    padding: 20px 250px;
+    color: white;
+}
+
+.profile-info {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 20px;
+    color: white;
+}
+
+.profile-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el contenedor de ayuda */
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#search {
+    flex: 1;
+    /* Ocupa todo el espacio disponible excepto el del botón */
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+#search-btn {
+    background-color: #333;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+#search-btn i {
+    font-size: 1.2rem;
+    /* Ajusta el tamaño del icono según sea necesario */
+}
+
+.loading-spinner {
+    margin-left: 10px;
+    border: 4px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 4px solid #333;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+
+/*Mensajes*/
+.messages-body {
+    margin-top: 20px;
+    flex: 1;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    /* Habilita la barra de desplazamiento vertical */
+    height: auto;
+    /* Ajusta este valor según el diseño que desees */
+    padding: 10px;
+    border: 1px solid #ccc;
+    /* Opcional: para darle un borde */
+    border-radius: 8px;
+}
+
+/*Chat*/
+/* Contenedor general de cada mensaje */
+.chat-message {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+/* Alinear mensajes enviados a la derecha */
+.chat-message.right {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+/* Estilos del avatar */
+.avatar {
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+/* Estilos de la burbuja del mensaje */
+.bubble {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 60%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Alinear la burbuja al lado izquierdo dentro de la estructura derecha */
+.chat-message.right .bubble {
+    order: 1;
+}
+
+/* El avatar estará al final (a la derecha) */
+.chat-message.right .avatar {
+    order: 2;
+}
+
+/* Estilos del texto dentro de la burbuja */
+.bubble p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+/* Estilos de la hora del mensaje */
+.bubble .time {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    text-align: right;
+    margin-top: 5px;
+}
+
+/* Ajustar avatar y burbuja cuando es una respuesta (lado izquierdo) */
+.chat-message.left {
+    justify-content: flex-start;
+    text-align: left;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .column-20,
+    .column-80 {
+        width: 100%;
+    }
+}

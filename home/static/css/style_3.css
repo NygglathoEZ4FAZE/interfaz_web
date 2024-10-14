@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #111113;
+    height: 100vh;
+}
+
+/*Cabecera*/
+.header {
+    background: linear-gradient(to bottom, #1e90ff, #111113);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 60px;
+}
+
+.header-left img {
+    height: 60px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-right a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 50px;
+    background-color: #333;
+}
+
+.header-right a:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+/* después del header */
+.content {
+    margin-top: 70px;
+    padding: 20px 250px;
+    color: white;
+}
+
+.content h2, h3{
+    margin-bottom: 10px;
+}
+/*Formulario*/
+#search {
+    flex: 1;
+    /* Ocupa todo el espacio disponible excepto el del botón */
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/*Combo-box*/
+.combo-container {
+    display: flex;
+    justify-content: space-between; /* Espacia los combo boxes a los extremos */
+}
+
+select {
+    padding: 10px; /* Espaciado interno de los combo boxes */
+    border: 1px solid #ccc; /* Bordes de los combo boxes */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+.combo-left {
+    margin-right: auto; /* Alinea a la izquierda */
+    margin-bottom: 20px;
+}
+
+.combo-right {
+    margin-left: auto; /* Alinea a la derecha */
+    margin-bottom: 20px;
+}
+
+/*Caja de texto*/
+.response-box {
+    width: 100%; /* Ancho completo */
+    height: 280px; /* Altura de la caja de texto */
+    margin-bottom: 20px;
+}
+
+.validate-button {
+    background-color: #1e90ff; /* Color de fondo inicial */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Suaviza el cambio de color */
+}
+
+.validate-button:hover {
+    background-color: #007bb5; /* Color de fondo al pasar el cursor */
+}

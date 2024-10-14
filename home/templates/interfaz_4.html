@@ -1,0 +1,48 @@
+<!-- Cargar archivos static -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Cargar estilos y scripts -->
+    <link rel="stylesheet" href="{% static 'css/style_3.css' %}" />
+  </head>
+  <body>
+    <!-- Cabecera -->
+    <header class="header">
+      <div class="header-content">
+        <div class="header-left">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczNM4xetf7zGAUv44g2eCoFYiQVempGqBKW0Eol7D6c85DcIzDlwxpySn1CQrImZAtemOdzivE6bzyo6o5K2EaAeKVPwv4OYQJ4RRPeanXFS4Gi6_VB0YbjjQNl4QJgy6HsN4Ei6T_aIriXaF5tJ44oSoA=w720-h382-s-no-gm?authuser=0" alt="Spotify Logo" />
+        </div>
+        <div class="header-right">
+          <a href="#">Account ▼</a>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      <h2>Gestión de conocimientos</h2>
+      <h3>Incidente/Problema</h3>
+      <input type="text" id="search" placeholder="Escribe el incidente - problema..."/>
+      <!-- Combo-box -->
+      <div class="combo-container">
+        <select class="combo-left">
+          <option value="">Selecciona una opción</option>
+          <option value="opcion1">Opción 1</option>
+          <option value="opcion2">Opción 2</option>
+          <option value="opcion3">Opción 3</option>
+        </select>
+        <select class="combo-right">
+          <option value="">Selecciona otra opción</option>
+          <option value="opcionA">Opción A</option>
+          <option value="opcionB">Opción B</option>
+          <option value="opcionC">Opción C</option>
+        </select>
+      </div>
+      <textarea class="response-box" type="text" id="search" placeholder="Escriba la respuesta al incidente - problema...."/></textarea>
+      <button class="validate-button">Validar</button>
+    </div>
+  </body>
+</html>
